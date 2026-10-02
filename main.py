@@ -17,3 +17,16 @@ def runcode(code, version="0.16.0"):
     )
     response.raise_for_status()
     return response.text
+
+def fmtcode(code, version="0.16.0"):
+    response = requests.post(
+        "https://zig-play.dev/server/fmt",
+        headers={
+            "Content-Type": "text/plain",
+            "X-Zig-Version": version,
+        },
+        data=code,
+        timeout=10,
+    )
+    response.raise_for_status()
+    return response.text
