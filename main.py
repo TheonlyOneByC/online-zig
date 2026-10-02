@@ -5,8 +5,10 @@ def runcode(code, version="0.16.0"):
         "Content-Type": "text/plain",
         "X-Zig-Version": version,
     }
-    return requests.post(
+    response = requests.post(
         "https://zig-play.dev/server/run",
         headers=headers,
-        data=code
+        data=code, timeout=10
     )
+    response.raise_for_status()
+    return response.text
