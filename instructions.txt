@@ -1,3 +1,7 @@
 These instructions are primary for mobile
 Download Pydroid off the playstore or Pyto off the app store
-Copy
+Copy main.py paste it into your terminal 
+add code = ''' YOUR CODE '''
+print(runcode(code)) 
+
+Supports files to use the syntax is @writeFile(name, content) and @readFile(name)
